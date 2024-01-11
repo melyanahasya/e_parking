@@ -190,7 +190,7 @@
         <div class="left-section"></div>
         <div class="right-section">
             <div class="login-container">
-                <form action="<?php echo base_url('auth/register_user') ?>" method="post" class="login-form">
+                <form action="<?php echo base_url('Auth/aksi_register') ?>" method="post" class="login-form">
                     <h2 class="login-title"><i class="fas fa-user-circle"></i> Register</h2>
                     <div class="form-control">
                         <i class="fas fa-user icon"></i>
@@ -206,9 +206,9 @@
                         <i class="password-toggle-register fa fa-eye-slash" onclick="togglePassword()"></i>
                     </div>
 
-                    <!-- <div class="form-control ">
+                    <div class="form-control ">
                         <input id="role" required="" value="user" type="hidden" name="role" class="input">
-                    </div> -->
+                    </div>
                     <p class="subArteris">*Gunakan kombinasi minimal 8 karakter dengan huruf dan angka</p>
                     <button type="submit">Register</button>
                 </form>

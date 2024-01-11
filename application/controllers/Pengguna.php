@@ -22,12 +22,41 @@ class Pengguna extends CI_Controller
         $this->load->view('pengguna/home');
     }
 
-    public function history_kendaraan()
-    {
-        $data['result'] = $this->m_model->get_data('history_parkir')->result();
-        $this->load->view('pengguna/history', $data);
+  // Fungsi untuk membuat kode acak
+    private function generateRandomCode($length = 6) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomCode = '';
+    
+        for ($i = 0; $i < $length; $i++) {
+            $randomCode .= $characters[rand(0, strlen($characters) - 1)];
+        }
+    
+        return $randomCode;
     }
+    
+    public function aksi_masuk_parkir()
+    {
+        // Menggunakan fungsi generateRandomCode() untuk membuat kode acak
+        $kode = $this->generateRandomCode();
+        $plat_nomor = $this->input->post('plat_nomor');
+        $merk = $this->input->post('merk');
+        $jenis = $this->input->post('jenis');
+    
+        $currenttime = date('H:i:s');
 
+        $data = [
+            'kode' => $kode, // Menambahkan kode acak
+            'plat_nomor' => $plat_nomor,
+            'merk' => $merk,
+            'jenis' => $jenis,
+            'jam_masuk' => $currenttime,
+            'status' => 'sedang parkir'
+        ];
+        $this->m_model->tambah_data('tb_daftar_parkir', $data);
+        redirect(base_url('pengguna'));
+    }
+    
+  
     public function daftar_kendaraan()
     {
         $data['daftar'] = $this->m_model->get_data('tb_daftar_parkir')->result();

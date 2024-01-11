@@ -879,10 +879,8 @@
                 <section>
                     <div class="container-form">
                         <div class="title-header-left">Masuk Parkir</div>
-                        <form action="#">
+                        <form action="<?php echo base_url('Pengguna/aksi_masuk_parkir') ?>" method="post">
                             <div class="user_details">
-
-
                                 <div class="input_poxs">
                                     <span class="datails">Plat Nomor</span>
                                     <input type="text" placeholder="Plat Nomor..." required>
@@ -891,8 +889,12 @@
                                     <span class="datails">Merk Kendaraan</span>
                                     <input type="text" placeholder="Merk Kendaraan..." required>
                                 </div>
+                                <div class="input_poxs">
+                                    <span class="datails">Jenis Kendaraan</span>
+                                    <input type="text" placeholder="Jenis Kendaraan..." required>
+                                </div>
                             </div>
-                            <div class="gender_details">
+                            <!-- <div class="gender_details">
                                 <input type="radio" name="gender" id="dot-1">
                                 <input type="radio" name="gender" id="dot-2">
                                 <input type="radio" name="gender" id="dot-3">
@@ -911,9 +913,9 @@
                                         <span class="gender">Bus / Truk / Lainnya</span>
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="button">
-                                <input type="submit" value="Kirim">
+                            <input type="submit" id="submit" class="submit" value="Kirim">
                             </div>
                         </form>
                     </div>

@@ -934,11 +934,9 @@
                             class="title-header-left">Daftar Kendaraan</div>
                         <table class="table">
                             <thead>
-                                <?php $no = 0;
-                                foreach ($daftar as $row):
-                                    $no++ ?>
+                            
                                     <tr>
-                                        <th scope="col">1</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Kode</th>
                                         <th scope="col">Plat Nomor</th>
                                         <th scope="col">Jenis </th>
@@ -948,32 +946,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php $no = 0;
+                                foreach ($daftar as $row):
+                                    $no++ ?>
                                     <tr>
-                                        <td>
-                                            <?php echo $no ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row->kode ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row->plat_nomor ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row->jenis ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row->merk ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row->status ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row->jam_masuk ?>
-                                        </td>
+                                        <td><?php echo $no?></td>
+                                        <td>  <?php echo $row->kode ?></td>
+                                        <td> <?php echo $row->plat_nomor ?></td>
+                                        <td> <?php echo $row->jenis ?></td>
+                                        <td> <?php echo $row->merk ?></td>
+                                        <td> <?php echo $row->status ?></td>
+                                        <td> <?php echo $row->jam_masuk ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
+                        
                     </div>
                 </section>
 

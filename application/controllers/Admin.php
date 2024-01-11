@@ -18,6 +18,12 @@ class Admin extends CI_Controller
         //     redirect(base_url() . 'auth');
         // }
     }
+
+    public function history_kendaraan()
+    {
+        $data['result'] = $this->m_model->get_data('history_parkir')->result();
+        $this->load->view('admin/history', $data);
+    }
  
 
 }
