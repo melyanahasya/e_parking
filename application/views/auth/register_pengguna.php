@@ -190,24 +190,24 @@
         <div class="left-section"></div>
         <div class="right-section">
             <div class="login-container">
-                <form action="<?php echo base_url('Auth/aksi_register') ?>" method="post" class="login-form">
+                <form action="<?php echo base_url('Auth/aksi_register_pengguna') ?>" method="post" class="login-form">
                     <h2 class="login-title"><i class="fas fa-user-circle"></i> Register</h2>
                     <div class="form-control">
                         <i class="fas fa-user icon"></i>
-                        <input type="text" placeholder="Username" id="username" required>
+                        <input type="text" placeholder="Username" name="username" id="username" required>
                     </div>
                     <div class="form-control">
                         <i class="fas fa-user icon"></i>
-                        <input type="text" placeholder="Email" id="email" required>
+                        <input type="text" placeholder="Email" name="email" id="email" required>
                     </div>
                     <div class="form-control">
                         <i class="fas fa-lock icon"></i>
-                        <input type="password" placeholder="Password" id="password">
+                        <input type="password" name="password" placeholder="Password" id="password">
                         <i class="password-toggle-register fa fa-eye-slash" onclick="togglePassword()"></i>
                     </div>
 
                     <div class="form-control ">
-                        <input id="role" required="" value="user" type="hidden" name="role" class="input">
+                        <input id="role" required="" value="pengguna" type="hidden" name="role" class="input">
                     </div>
                     <p class="subArteris">*Gunakan kombinasi minimal 8 karakter dengan huruf dan angka</p>
                     <button type="submit">Register</button>
@@ -217,16 +217,7 @@
     </div>
 
     <script>
-        <?php if ($this->session->flashdata('error_email')): ?>
-            Swal.fire({
-                icon: 'error',
-                title: 'Registrasi Gagal',
-                text: '<?= $this->session->flashdata('error_email'); ?>',
-                timer: 2500,
-                showConfirmButton: false,
-                timerProgressBar: true
-            });
-        <?php endif; ?>
+       
 
 
         function togglePassword() {

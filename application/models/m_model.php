@@ -7,6 +7,12 @@ class M_model extends CI_Model
         return $this->db->get($table);
     }
 
+    public function get_by_id($tabel, $id_column, $id)
+    {
+        $data = $this->db->where($id_column, $id)->get($tabel);
+        return $data;
+    }
+
     function getwhere($table, $data)
     {
         return $this->db->get_where($table, $data);

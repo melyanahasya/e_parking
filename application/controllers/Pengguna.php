@@ -11,9 +11,9 @@ class Pengguna extends CI_Controller
         $this->load->library('upload');
 
         // kondisi untuk login sesuai role
-        // if ($this->session->userdata('logged_in') != true || $this->session->userdata('role') != 'karyawan') {
-        //     redirect(base_url() . 'auth');
-        // }
+        if ($this->session->userdata('logged_in') != true || $this->session->userdata('role') != 'pengguna') {
+            redirect(base_url() . 'auth');
+        }
     }
 
     // menu izin
@@ -57,10 +57,11 @@ class Pengguna extends CI_Controller
     }
     
   
-    public function daftar_kendaraan()
+    public function data_kendaraan()
     {
         $data['daftar'] = $this->m_model->get_data('tb_daftar_parkir')->result();
-        $this->load->view('pengguna/daftar_kendaraan', $data);
+        // $data['daftar'] = $this->m_model->get_by_id('tb_daftar_parkir', 'id', $this->session->userdata('id'))->result();
+        $this->load->view('pengguna/data_kendaraan', $data);
     }
 
 }

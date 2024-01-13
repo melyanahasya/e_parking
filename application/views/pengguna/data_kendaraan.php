@@ -430,6 +430,22 @@
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
+        .lenght-all {
+            display: flex;
+            gap: 2%;
+            margin: 5% 4%;
+        }
+
+        .container-lenght {
+            max-width: 90%;
+            width: 50%;
+            /* margin-top: 5%; */
+            padding: 25px 30px;
+            /* margin: 5% 4%; */
+            border-radius: 5px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
         /* .container  .title{
     font-size: 25px;
     font-weight: 500; 
@@ -444,7 +460,13 @@
     width: 30px;
     background: linear-gradient(123deg, #71b8e7,#9b59b6);
 } */
-        .container .title-header-left {}
+        .container .title-header-left {
+            color: white;
+        }
+
+        .container .title-header-left h1 {
+            text-align: center;
+        }
 
         .container form .user_details {
             display: flex;
@@ -564,6 +586,20 @@
 
             .user_details::-webkit-scrollber {
                 width: 0;
+            }
+
+            .lenght-all {
+                display: block;
+                justify-content: center;
+                text-align: center;
+                margin: 5% 2% 5% 10%;
+            }
+
+            .container-lenght {
+                max-width: 90%;
+                width: 100%;
+                padding: 25px 30px;
+                border-radius: 30px;
             }
         }
     </style>
@@ -820,129 +856,127 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-        <div class="itechie-header-builder">
-            <div data-elementor-type="wp-post" data-elementor-id="959" class="elementor elementor-959">
+        <?php $this->load->view('componen/navbar'); ?>
+        <div id="content" class="site-content">
+
+            <!-- preloader area start -->
+            <div class="preloader" id="preloader">
+                <div class="preloader-inner">
+                    <div class="spinner">
+                        <div class="dot1"></div>
+                        <div class="dot2"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- preloader area end -->
+            <div data-elementor-type="wp-page" data-elementor-id="261" class="elementor elementor-261">
                 <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-250ad1c9 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                    data-id="250ad1c9" data-element_type="section">
+                    class="elementor-section elementor-top-section elementor-element elementor-element-b034cb8 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                    data-id="b034cb8" data-element_type="section">
                     <div class="elementor-container elementor-column-gap-no">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11a3f4d2"
-                            data-id="11a3f4d2" data-element_type="column">
+                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3436b3a"
+                            data-id="3436b3a" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-629e58f5 elementor-widget elementor-widget-itechie-Header-widget"
-                                    data-id="629e58f5" data-element_type="widget"
-                                    data-widget_type="itechie-Header-widget.default">
+                                <div class="elementor-element elementor-element-a63a71b elementor-widget elementor-widget-itechie-banner-widget"
+                                    data-id="a63a71b" data-element_type="widget"
+                                    data-widget_type="itechie-banner-widget.default">
                                     <div class="elementor-widget-container">
-                                        <!-- navbar start -->
 
-                                        <nav class="navbar navbar-area navbar-area-3 navbar-expand-lg">
-                                            <div class="container nav-container">
-                                                <div class="responsive-mobile-menu">
-                                                    <button class="menu toggle-btn d-block d-lg-none"
-                                                        data-target="#itech_main_menu" aria-expanded="false"
-                                                        aria-label="Toggle navigation">
-                                                        <span class="icon-left"></span>
-                                                        <span class="icon-right"></span>
-                                                    </button>
-                                                </div>
-                                                <div class="logo">
-                                                    <a class="d-none d-lg-inline-block">
+                                        <div class="banner-area banner-area-3">
+                                            <div class="banner-slider slider-control-round owl-carousel">
+                                                <div class="item bg-overlay"
+                                                    style="background-image: url(https://png.pngtree.com/background/20230612/original/pngtree-line-of-parked-motorcycles-picture-image_3176176.jpg);">
 
-                                                        <div class="logo-images">
-                                                            <img width="100" height="54"
-                                                                src="http://localhost/e-parking/image/logoEParking.png"
-                                                                alt="">
-                                                            <p style="margin-top:10%">Parking</p>
+                                                    <div class="container">
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-9">
+                                                                <div class="banner-inner style-white text-center">
+                                                                    <h2 class="title s-animate-2">Data <span>Kendaraan</span>
+                                                                    </h2>
+
+
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </a>
-                                                    <a class="d-lg-none d-inline-block"
-                                                        href="https://wp-themes.solverwp.com/itechie/">
-                                                        <img width="100" height="54" src="" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="nav-right-part nav-right-part-mobile">
-                                                    <a class="search-bar-btn" href="#">
-                                                        <i class="fa fa-search"></i>
-                                                    </a>
-                                                </div>
-                                                <div class="collapse navbar-collapse" id="itech_main_menu">
-                                                    <ul id="menu-menu-1" class="navbar-nav menu-open text-lg-end">
-
-                                                        <li id="menu-item-964"
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor  menu-item-964">
-                                                            <a href="<?php echo base_url("/") ?>">Tentang Kami</a>
-                                                        </li>
-                                                        <li id="menu-item-964"
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor  menu-item-964">
-                                                            <a href="<?php echo base_url("pengguna") ?>">Home</a>
-                                                        </li>
-
-                                                        <li id="menu-item-549"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                            <a
-                                                                href="<?php echo base_url("pengguna/daftar_kendaraan") ?>">Daftar
-                                                                Kendaraan</a>
-                                                        </li>
-                                                        <?php $user_role = $this->session->userdata('user_role'); ?>
-
-                                                        <?php if ($user_role == 'admin'): ?>
-                                                            <li id="menu-item-549"
-                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-549">
-                                                                <a
-                                                                    href="<?php echo base_url("admin/history") ?>">History
-                                                                    Kendaraan</a>
-                                                            </li>
-                                                        <?php endif; ?>
-                                                        <li id="menu-item-549"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                            <a href="<?php echo base_url('auth') ?>">Login</a>
-
-                                                        </li>
-
-
-                                                        <li id="menu-item-549"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                            <a onclick="logout()">Logout</a>
-
-                                                        </li>
-                                                    </ul>
+                                                    </div>
                                                 </div>
 
                                             </div>
-                                        </nav>
-                                        <!-- navbar end -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
+
+                <!-- <section class="lenght-all">
+                    <div class="container-lenght">
+                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
+                            class="title-header-left">Jumlah Motor</div>
+                        <h1 style="text-align:center">3 <i class="fas fa-motorcycle"></i></h1>
+                    </div>
+                    <div class="container-lenght">
+                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
+                            class="title-header-left">Jumlah Mobil</div>
+                        <h1 style="text-align:center">3</h1>
+                    </div>
+                    <div class="container-lenght">
+                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
+                            class="title-header-left">Jumlah Truk / Bus / Lainnya</div>
+                        <h1 style="text-align:center">3</h1>
+                    </div>
+                </section> -->
+                <section>
+                    <div class="container-form">
+                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
+                            class="title-header-left">Data Kendaraan</div>
+                        <table class="table">
+                            <thead>
+                            
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Kode</th>
+                                        <th scope="col">Plat Nomor</th>
+                                        <th scope="col">Jenis </th>
+                                        <th scope="col">Merk </th>
+                                        <th scope="col">Status </th>
+                                        <th scope="col">Jam Masuk </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php $no = 0;
+                                foreach ($daftar as $row):
+                                    $no++ ?>
+                                    <tr>
+                                        <td><?php echo $no?></td>
+                                        <td>  <?php echo $row->kode ?></td>
+                                        <td> <?php echo $row->plat_nomor ?></td>
+                                        <td> <?php echo $row->jenis ?></td>
+                                        <td> <?php echo $row->merk ?></td>
+                                        <td> <?php echo $row->status ?></td>
+                                        <td> <?php echo $row->jam_masuk ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </section>
+
+                <?php $this->load->view('componen/footer'); ?>
+
             </div>
         </div>
+        <!-- back to top area start -->
+        <div class="back-to-top">
+            <span class="back-top"><i class="fa fa-angle-up"></i></span>
+        </div>
+        <!-- back to top area end -->
 
+    </div><!-- #page -->
 
-
-    </div>
-    <script src="path-to-jquery/jquery.min.js"></script>
-    <script src="path-to-bootstrap-js/bootstrap.min.js"></script>
-    <script>
-        function logout() {
-            Swal.fire({
-                title: 'Konfirmasi',
-                text: 'Apakah Anda Yakin Ingin Keluar ?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#198754',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, Keluar ',
-                cancelButtonText: 'Batal'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "<?php echo base_url('auth/logout'); ?>";
-                }
-            });
-        }
-    </script>
     <script>(function () {
             function maybePrefixUrlField() {
                 const value = this.value.trim()

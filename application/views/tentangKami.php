@@ -1072,7 +1072,6 @@
                                                                     <h4>Lokasi Parkir dan Jukir terdata</h4>
                                                                     <p>Memudahkan Pengelolaan Parkir karena lokasi dan juru parkir terdata. dengan keuntungan yang didapatkan akan sangat efektif dalam memenejemen waktu masyarakat</p>
                                                                    
-                                                                    <span class="designation">Founder</span>
                                                                 </div>
                                                             </div>
                                                         </div>

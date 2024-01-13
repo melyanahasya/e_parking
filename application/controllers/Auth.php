@@ -15,10 +15,10 @@ class Auth extends CI_Controller
     {
         $this->load->view('auth/login');
     }
-    public function register_user()
+    public function register_pengguna()
     {
 
-        $this->load->view('auth/register_user');
+        $this->load->view('auth/register_pengguna');
     }
     public function register_admin()
     {
@@ -27,83 +27,40 @@ class Auth extends CI_Controller
     }
 
 
-    // public function aksi_login()
-    // {
-    //     $email = $this->input->post('email', true);
-    //     $password = $this->input->post('password', true);
-    //     $data = ['email' => $email,];
-    //     $query = $this->m_model->getwhere('user', $data);
-    //     $result = $query->row_array();
 
+    //function aksi login
+    public function aksi_login()
+    {
+        $email = $this->input->post('email', true);
+        $password = $this->input->post('password', true);
+        $data = ['email' => $email,];
+        $query = $this->m_model->getwhere('tb_login', $data);
+        $result = $query->row_array();
 
-    //     if (!empty($result) && md5($password) === $result['password']) {
-    //         $data = [
-    //             'logged_in' => TRUE,
-    //             'email' => $result['email'],
-    //             'username' => $result['username'],
-    //             'role' => $result['role'],
-    //             'id' => $result['id'],
-    //         ];
-    //         $this->session->set_userdata($data);
-    //         if ($this->session->userdata('role') == 'admin') {
-    //             redirect(base_url() . "admin/");
-    //         } elseif ($this->session->userdata('role') == 'user') {
-    //             redirect(base_url() . "pengguna/");
-    //         } else {
-    //             redirect(base_url() . "admin/");
-    //         }
-    //     } else {
-    //         redirect(base_url() . "auth");
-    //     }
-    // }
+        if (!empty($result) && md5($password) === $result['password']) {
+            $data = [
+                'loged_in' => TRUE,
+                'email' => $result['email'],
+                'username' => $result['username'],
+                'role' => $result['role'],
+                'id' => $result['id'],
+                'last_activity' => time(), // Menambahkan waktu terakhir akses
+            ];
+            $this->session->set_userdata($data);
+            if ($this->session->userdata('role') == 'admin') {
+                redirect(base_url() . 'admin/');
+            }
+            if ($this->session->userdata('role') == 'pengguna') {
+                redirect(base_url() . 'pengguna/');
+            } else {
+                redirect(base_url() . ' auth');
+            }
+        } else {
+            redirect(base_url() . 'auth');
+        }
+    }
 
-       //function aksi login
-       public function aksi_login()
-       {
-           $email = $this->input->post('email', true);
-           $password = $this->input->post('password', true);
-       
-           // Validasi jika data tidak terisi
-           if (empty($email) || empty($password)) {
-               $this->session->set_flashdata('error', 'Data harus di isi lengkap');
-               redirect(base_url());
-           }
-       
-           $data = ['email' => $email];
-           $query = $this->m_model->getwhere('tb_login', $data);
-           $result = $query->row_array();
-       
-           if (!empty($result)) {
-               if (md5($password) === $result['password']) {
-                   $data = [
-                       'logged_in' => true,
-                       'email' => $result['email'],
-                    //    'username' => $result['username'],
-                       'role' => $result['role'],
-                       'id' => $result['id'],
-                   ];
-                   $this->session->set_userdata($data);
-       
-                   if ($result['role'] == 'supervisor') {
-                       $this->session->set_flashdata('login_supervisor', 'Anda berhasil login');
-                       redirect(base_url() . "supervisor");
-                   } elseif ($result['role'] == 'operator') {
-                       $this->session->set_flashdata('login_operator', 'Anda berhasil login');
-                       redirect(base_url() . 'operator');
-                   }
-               } else {
-                   // Password salah
-                   $this->session->set_flashdata('error', 'Password salah');
-                   redirect(base_url());
-               }
-           } else {
-               // Email salah
-               $this->session->set_flashdata('error', 'Email salah');
-               redirect(base_url());
-           }
-       }
-
- public function aksi_register_admin()
+    public function aksi_register_admin()
     {
         // Validasi form
         $this->form_validation->set_rules('email', 'Email', 'trim|required|regex_match[/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/]');
@@ -128,7 +85,7 @@ class Auth extends CI_Controller
         }
     }
 
-    public function aksi_register()
+    public function aksi_register_pengguna()
     {
         // Validasi form
         $this->form_validation->set_rules('email', 'Email', 'trim|required|regex_match[/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/]');
@@ -153,7 +110,7 @@ class Auth extends CI_Controller
         }
     }
 
-   
+
 
     function logout()
     {
@@ -164,15 +121,15 @@ class Auth extends CI_Controller
     //   public function logout()
     //   {
     //       $role = $this->session->userdata('role');
-          
+
     //       if ($role === 'operator') {
     //           $this->session->set_flashdata('success_logout', 'Anda Berhasil Keluar');
     //       } elseif ($role === 'supervisor') {
     //           $this->session->set_flashdata('success_logout', 'Anda Berhasil Keluar');
     //       }
-          
+
     //       $this->session->sess_destroy();
     //       redirect(base_url('auth'));
     //   }
-      
+
 }

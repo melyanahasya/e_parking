@@ -14,9 +14,15 @@ class Admin extends CI_Controller
         $this->load->library('upload');
 
         // kondisi untuk login sesuai role
-        // if ($this->session->userdata('logged_in') != true || $this->session->userdata('role') != 'admin') {
-        //     redirect(base_url() . 'auth');
-        // }
+        if ($this->session->userdata('logged_in') != true || $this->session->userdata('role') != 'admin') {
+            redirect(base_url() . 'auth');
+        }
+    }
+    
+    public function index()
+    {
+        $data['daftar'] = $this->m_model->get_data('tb_daftar_parkir')->result();
+        $this->load->view('admin/daftar_kendaraan', $data);
     }
 
     public function history_kendaraan()
@@ -25,5 +31,6 @@ class Admin extends CI_Controller
         $this->load->view('admin/history', $data);
     }
  
+   
 
 }
