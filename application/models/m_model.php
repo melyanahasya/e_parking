@@ -24,7 +24,8 @@ class M_model extends CI_Model
         return $this->db->insert_id($table);
     }
 
-    public function generateRandomCode($length = 6) {
+    public function generateRandomCode($length = 6)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomCode = '';
 
@@ -64,5 +65,35 @@ class M_model extends CI_Model
         );
 
         $this->db->insert('tb_login', $data);
+    }
+
+    public function getByIdPengguna($idPengguna)
+    {
+        $this->db->select('tb_daftar_parkir.*, tb_login.username');
+        $this->db->where('tb_daftar_parkir.id_pengguna', $idPengguna);
+        $this->db->join('tb_login', 'tb_login.id = tb_daftar_parkir.id_pengguna', 'left');
+        $query = $this->db->get('tb_daftar_parkir');
+        return $query->result();
+    }
+
+ 
+    public function cek_kendaraan_parkir($plat_nomor)
+    {
+        $this->db->where('plat_nomor', $plat_nomor);
+        $this->db->where('status', 'sedang parkir');
+        $query = $this->db->get('tb_daftar_parkir');
+
+        return $query->num_rows() > 0;
+    }
+
+    public function getJumlahKendaraan($jenis)
+    {
+        if ($jenis === 'lainnya') {
+            $this->db->where_not_in('jenis', ['motor', 'mobil']);
+        } else {
+            $this->db->where('jenis', $jenis);
+        }
+
+        return $this->db->count_all_results('tb_daftar_parkir');
     }
 }

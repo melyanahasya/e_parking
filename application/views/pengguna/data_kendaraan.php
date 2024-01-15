@@ -8,6 +8,7 @@
 
     <title>E - Parking</title>
     <meta name='robots' content='max-image-preview:large' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
     <link rel='dns-prefetch' href='//use.fontawesome.com' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link rel="alternate" type="application/rss+xml" title="Itechie &raquo; Feed"
@@ -702,32 +703,21 @@
         href="https://wp-themes.solverwp.com/itechie/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp-themes.solverwp.com%2Fitechie%2Fhome-three%2F&#038;format=xml" />
     <meta name="generator"
         content="Elementor 3.17.3; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
-    <style type="text/css">
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: #201654;
-        }
 
-        p,
-        .single-blog-inner .single-blog-details p {
-            color: #696969;
-        }
-    </style>
-    <link rel="icon" href="https://wp-themes.solverwp.com/itechie/wp-content/uploads/2022/02/cropped-logo-80x80.png"
-        sizes="32x32" />
-    <link rel="icon" href="https://wp-themes.solverwp.com/itechie/wp-content/uploads/2022/02/cropped-logo-300x300.png"
-        sizes="192x192" />
-    <link rel="apple-touch-icon"
-        href="https://wp-themes.solverwp.com/itechie/wp-content/uploads/2022/02/cropped-logo-300x300.png" />
     <meta name="msapplication-TileImage"
         content="https://wp-themes.solverwp.com/itechie/wp-content/uploads/2022/02/cropped-logo-300x300.png" />
 </head>
 
 <style type="text/css" id="wp-custom-css">
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #201654;
+    }
+
     /* alamgir */
     .footer-area .widget_subscribe button:after {
         content: "\f061";
@@ -798,21 +788,6 @@
 
     }
 
-    .bl-gray-1 {
-        border-left: 1px solid #CDD1D8;
-        padding-left: 20px;
-    }
-
-    .home-2-counter .single-exp-inner.style-white h2 {
-        font-size: 80px;
-        line-height: 1;
-        font-weight: 700;
-    }
-
-    .home-2-counter .section-title {
-        margin-bottom: 80px;
-    }
-
     .navbar-top ul li p,
     .navbar-top ul li a {
         text-transform: capitalize;
@@ -825,29 +800,35 @@
         font-size: 15px;
     }
 
-    .itechie-footer-builder .mc4wp-response {
-        position: absolute;
-        bottom: 0;
-        font-size: 13px;
-        color: #fff;
-    }
-
-    .itechie-footer-builder .mc4wp-response p {
-        color: #fff;
-
-    }
-
-    .single-testimonial-inner.style-two.text-center {
-        margin-top: 0;
-    }
-
-    .logo .logo-images {
-        display: flex;
-
-    }
-
     .logo p {
         color: white;
+    }
+
+    tbody {
+        text-align: center;
+    }
+
+    thead {
+        text-align: center;
+    }
+
+    .data_kendaraan{
+        margin-top: 6rem;
+    }
+
+    @media (max-width: 600px) {
+        table {
+            width: 4.5rem;
+            overflow-x: scroll;
+        }
+
+        .responsive-3 {
+            width: 100%;
+        }
+
+        th {
+            width: 10rem;
+        }
     }
 </style>
 
@@ -891,7 +872,8 @@
                                                         <div class="row justify-content-center">
                                                             <div class="col-lg-9">
                                                                 <div class="banner-inner style-white text-center">
-                                                                    <h2 class="title s-animate-2">Data <span>Kendaraan</span>
+                                                                    <h2 class="title s-animate-2">Data
+                                                                        <span>Kendaraan</span>
                                                                     </h2>
 
 
@@ -911,32 +893,17 @@
                 </section>
 
 
-                <!-- <section class="lenght-all">
-                    <div class="container-lenght">
-                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
-                            class="title-header-left">Jumlah Motor</div>
-                        <h1 style="text-align:center">3 <i class="fas fa-motorcycle"></i></h1>
-                    </div>
-                    <div class="container-lenght">
-                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
-                            class="title-header-left">Jumlah Mobil</div>
-                        <h1 style="text-align:center">3</h1>
-                    </div>
-                    <div class="container-lenght">
-                        <div style="background:#365486; color:white; text-align: center; padding: 1%;"
-                            class="title-header-left">Jumlah Truk / Bus / Lainnya</div>
-                        <h1 style="text-align:center">3</h1>
-                    </div>
-                </section> -->
-                <section>
+                <section class="data_kendaraan">
                     <div class="container-form">
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
                             class="title-header-left">Data Kendaraan</div>
-                        <table class="table">
-                            <thead>
-                            
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+
                                     <tr>
-                                        <th scope="col">No</th>
+                                        <th style="width: 3rem" scope="col">No</th>
+                                        <th scope="col">Nama</th>
                                         <th scope="col">Kode</th>
                                         <th scope="col">Plat Nomor</th>
                                         <th scope="col">Jenis </th>
@@ -946,22 +913,40 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php $no = 0;
-                                foreach ($daftar as $row):
-                                    $no++ ?>
-                                    <tr>
-                                        <td><?php echo $no?></td>
-                                        <td>  <?php echo $row->kode ?></td>
-                                        <td> <?php echo $row->plat_nomor ?></td>
-                                        <td> <?php echo $row->jenis ?></td>
-                                        <td> <?php echo $row->merk ?></td>
-                                        <td> <?php echo $row->status ?></td>
-                                        <td> <?php echo $row->jam_masuk ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                        
+                                    <?php $no = 0;
+                                    foreach ($daftar as $row):
+                                        $no++ ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $no ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->username ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->kode ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->plat_nomor ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jenis ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->merk ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->status ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jam_masuk ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </section>
 
@@ -977,19 +962,8 @@
 
     </div><!-- #page -->
 
-    <script>(function () {
-            function maybePrefixUrlField() {
-                const value = this.value.trim()
-                if (value !== '' && value.indexOf('http') !== 0) {
-                    this.value = 'http://' + value
-                }
-            }
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-            const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
-            for (let j = 0; j < urlFields.length; j++) {
-                urlFields[j].addEventListener('blur', maybePrefixUrlField)
-            }
-        })();</script>
     <div class="td-search-popup" id="td-search-popup">
         <form action="https://wp-themes.solverwp.com/itechie/" class="search-form">
             <div class="form-group">
@@ -998,86 +972,7 @@
             <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
         </form>
     </div>
-    <div class="body-overlay" id="body-overlay"></div>
-    <link rel='stylesheet' id='elementor-post-344-css'
-        href='https://wp-themes.solverwp.com/itechie/wp-content/uploads/elementor/css/post-344.css?ver=1704032313'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-icons-shared-0-css'
-        href='https://wp-themes.solverwp.com/itechie/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-icons-fa-brands-css'
-        href='https://wp-themes.solverwp.com/itechie/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.15.3'
-        type='text/css' media='all' />
-    <link rel='stylesheet' id='elementor-icons-shared-1-css'
-        href='https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/css/custom-icon.css?ver=1.0'
-        type='text/css' media='all' />
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8.4"
-        id="swv-js"></script>
-    <script type="text/javascript" id="contact-form-7-js-extra">
-        /* <![CDATA[ */
-        var wpcf7 = { "api": { "root": "https:\/\/wp-themes.solverwp.com\/itechie\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8.4"
-        id="contact-form-7-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/bootstrap.min.js?ver=1.0.0"
-        id="bootstrap-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/nice-select.min.js?ver=1.0.0"
-        id="nice-select-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/magnific.min.js?ver=1.0.0"
-        id="magnific-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/owl.min.js?ver=1.0.0"
-        id="owl-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/slick.min.js?ver=1.0.0"
-        id="slick-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/tweenmax.min.js?ver=1.0.0"
-        id="tweenmax-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/isotope.min.js?ver=1.0.0"
-        id="isotope-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/imageload.min.js?ver=1.0.0"
-        id="imageload-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/itechie-core/assets/js/elementor-script.js?ver=1.0.0"
-        id="itechie-elementor-js-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/themes/itechie/assets/js/fontawesome.min.js?ver=1.0.2"
-        id="fontawesome-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/themes/itechie/assets/js/main.js?ver=1.0.2"
-        id="itechie-main-script-js"></script>
-    <script type="text/javascript" defer
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=4.9.10"
-        id="mc4wp-forms-api-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.17.3"
-        id="elementor-webpack-runtime-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.17.3"
-        id="elementor-frontend-modules-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
-        id="elementor-waypoints-js"></script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2"
-        id="jquery-ui-core-js"></script>
-    <script type="text/javascript" id="elementor-frontend-js-before">
-        /* <![CDATA[ */
-        var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.17.3", "is_static": false, "experimentalFeatures": { "e_dom_optimization": true, "e_optimized_assets_loading": true, "e_optimized_css_loading": true, "additional_custom_breakpoints": true, "container": true, "e_swiper_latest": true, "block_editor_assets_optimize": true, "landing-pages": true, "e_image_loading_optimization": true, "e_global_styleguide": true }, "urls": { "assets": "https:\/\/wp-themes.solverwp.com\/itechie\/wp-content\/plugins\/elementor\/assets\/" }, "swiperClass": "swiper", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description" }, "post": { "id": 261, "title": "Home%20Three%20%E2%80%93%20Itechie", "excerpt": "", "featuredImage": false } };
-        /* ]]> */
-    </script>
-    <script type="text/javascript"
-        src="https://wp-themes.solverwp.com/itechie/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.17.3"
-        id="elementor-frontend-js"></script>
+
 </body>
 
 

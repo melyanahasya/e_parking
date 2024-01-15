@@ -173,7 +173,7 @@
 
         .password-toggle-register2 {
             margin-left: 92%;
-            margin-top: -16%;
+
         }
 
         /*Responsive*/
@@ -182,12 +182,6 @@
                 display: block;
                 flex: 1;
             }
-
-            .password-toggle-register2 {
-                margin-left: 92%;
-                margin-top: -16%;
-            }
-        }
         }
     </style>
 </head>
@@ -197,7 +191,7 @@
         <div class="left-section"></div>
         <div class="right-section">
             <div class="login-container">
-            <form action="<?php echo base_url('Auth/aksi_register_admin') ?>" method="post" class="login-form">
+                <form action="<?php echo base_url('Auth/aksi_register_admin') ?>" method="post" class="login-form">
                     <h2 class="login-title"><i class="fas fa-user-circle"></i> Register</h2>
                     <div class="form-control">
                         <i class="fas fa-user icon"></i>
@@ -210,7 +204,7 @@
                     <div class="form-control">
                         <i class="fas fa-lock icon"></i>
                         <input type="password" name="password" placeholder="Password" id="password">
-                        <i class="password-toggle-register fa fa-eye-slash" onclick="togglePassword()"></i>
+                        <i class="password-toggle-register2 fa fa-eye-slash" onclick="togglePassword()"></i>
                     </div>
 
                     <div class="form-control ">

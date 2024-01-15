@@ -850,6 +850,33 @@
     .logo p {
         color: white;
     }
+
+    tbody {
+        text-align: center;
+    }
+
+    thead {
+        text-align: center;
+    }
+
+    .history_kendaraan{
+        margin-top: 6rem;
+    }
+
+    @media (max-width: 600px) {
+        table {
+            width: 4.5rem;
+            overflow-x: scroll;
+        }
+
+        .responsive-3 {
+            width: 100%;
+        }
+
+        th {
+            width: 10rem;
+        }
+    }
 </style>
 
 <body
@@ -892,7 +919,8 @@
                                                         <div class="row justify-content-center">
                                                             <div class="col-lg-9">
                                                                 <div class="banner-inner style-white text-center">
-                                                                    <h2 class="title s-animate-2">History <span>Kendaraan</span>
+                                                                    <h2 class="title s-animate-2">History
+                                                                        <span>Kendaraan</span>
                                                                     </h2>
 
 
@@ -911,38 +939,55 @@
                     </div>
                 </section>
 
-                <section>
+                <section class="history_kendaraan">
                     <div class="container-form">
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
-                            class="title-header-left">History</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">Kode</th>
-                                    <th scope="col">Plat Nomor</th>
-                                    <th scope="col">Jenis </th>
-                                    <th scope="col">Merk </th>
-                                    <th scope="col">Jam Masuk </th>
-                                    <th scope="col">Jam Keluar </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $no = 0;
-                                foreach ($result as $row):
-                                    $no++ ?>
+                            class="title-header-left">History Kendaraan</div>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td><?php echo $no?></td>
-                                        <td>  <?php echo $row->kode ?></td>
-                                        <td> <?php echo $row->plat_nomor ?></td>
-                                        <td> <?php echo $row->jenis ?></td>
-                                        <td> <?php echo $row->merk ?></td>
-                                        <td> <?php echo $row->jam_masuk ?></td>
-                                        <td> <?php echo $row->jam_keluar ?></td>
+                                        <th style="width: 3rem" scope="col">No</th>
+                                        <th scope="col">Kode</th>
+                                        <th scope="col">Plat Nomor</th>
+                                        <th scope="col">Jenis </th>
+                                        <th scope="col">Merk </th>
+                                        <th scope="col">Jam Masuk </th>
+                                        <th scope="col">Jam Keluar </th>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php $no = 0;
+                                    foreach ($result as $row):
+                                        $no++ ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $no ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->kode ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->plat_nomor ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jenis ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->merk ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jam_masuk ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jam_keluar ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </section>
 

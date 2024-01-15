@@ -849,6 +849,30 @@
     .logo p {
         color: white;
     }
+
+    tbody {
+        text-align: center;
+    }
+
+    thead {
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        table {
+            width: 4.5rem;
+            overflow-x: scroll;
+        }
+
+        .responsive-3 {
+            width: 100%;
+        }
+
+        th {
+            width: 10rem;
+        }
+
+    }
 </style>
 
 <body
@@ -891,7 +915,8 @@
                                                         <div class="row justify-content-center">
                                                             <div class="col-lg-9">
                                                                 <div class="banner-inner style-white text-center">
-                                                                    <h2 class="title s-animate-2">Daftar <span>Kendaraan</span>
+                                                                    <h2 class="title s-animate-2">Daftar
+                                                                        <span>Kendaraan</span>
                                                                     </h2>
 
 
@@ -915,53 +940,76 @@
                     <div class="container-lenght">
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
                             class="title-header-left">Jumlah Motor</div>
-                        <h1 style="text-align:center">3 <i class="fas fa-motorcycle"></i></h1>
+                        <h1 style="text-align:center">
+                            <?= $jumlah_motor ?>
                     </div>
                     <div class="container-lenght">
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
                             class="title-header-left">Jumlah Mobil</div>
-                        <h1 style="text-align:center">3</h1>
+                        <h1 style="text-align:center">
+                            <?= $jumlah_mobil ?>
+                        </h1>
                     </div>
                     <div class="container-lenght">
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
                             class="title-header-left">Jumlah Truk / Bus / Lainnya</div>
-                        <h1 style="text-align:center">3</h1>
+                        <h1 style="text-align:center">
+                            <?= $jumlah_truk_bus_lainnya ?>
+                        </h1>
                     </div>
                 </section>
                 <section>
                     <div class="container-form">
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
                             class="title-header-left">Daftar Kendaraan</div>
-                        <table class="table">
-                            <thead>
-                            
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <th scope="col">No</th>
+                                        <th style="width: 3rem" scope="col">No</th>
+                                        <!-- <th scope="col">Nama</th> -->
                                         <th scope="col">Kode</th>
                                         <th scope="col">Plat Nomor</th>
-                                        <th scope="col">Jenis </th>
-                                        <th scope="col">Merk </th>
-                                        <th scope="col">Status </th>
-                                        <th scope="col">Jam Masuk </th>
+                                        <th scope="col">Jenis</th>
+                                        <th scope="col">Merk</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Jam Masuk</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php $no = 0;
-                                foreach ($daftar as $row):
-                                    $no++ ?>
-                                    <tr>
-                                        <td><?php echo $no?></td>
-                                        <td>  <?php echo $row->kode ?></td>
-                                        <td> <?php echo $row->plat_nomor ?></td>
-                                        <td> <?php echo $row->jenis ?></td>
-                                        <td> <?php echo $row->merk ?></td>
-                                        <td> <?php echo $row->status ?></td>
-                                        <td> <?php echo $row->jam_masuk ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                        
+                                    <?php $no = 0;
+                                    foreach ($daftar as $row):
+                                        $no++ ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $no ?>
+                                            </td>
+                                            <!-- <td>  <?php echo $row->username ?></td> -->
+                                            <td>
+                                                <?php echo $row->kode ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->plat_nomor ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jenis ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->merk ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->status ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row->jam_masuk ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+
                     </div>
                 </section>
 

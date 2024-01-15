@@ -8,6 +8,7 @@
 
     <title>E - Parking</title>
     <meta name='robots' content='max-image-preview:large' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
     <link rel='dns-prefetch' href='//use.fontawesome.com' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link rel="alternate" type="application/rss+xml" title="Itechie &raquo; Feed"
@@ -430,20 +431,6 @@
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
-        /* .container  .title{
-    font-size: 25px;
-    font-weight: 500; 
-    position: relative;
-}
-.container .title::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    background: linear-gradient(123deg, #71b8e7,#9b59b6);
-} */
         .container .title-header-left {}
 
         .container form .user_details {
@@ -451,8 +438,6 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }
-
-
 
         form .user_details .input_poxs {
             margin-bottom: 15px;
@@ -564,6 +549,10 @@
 
             .user_details::-webkit-scrollber {
                 width: 0;
+            }
+
+            .masuk_parkir{
+                margin-top: 5rem;
             }
         }
     </style>
@@ -822,8 +811,8 @@
 
         <?php $this->load->view('componen/navbar'); ?>
 
-        
-                <div id="content" class="site-content">
+
+        <div id="content" class="site-content">
 
             <!-- preloader area start -->
             <div class="preloader" id="preloader">
@@ -876,10 +865,13 @@
                     </div>
                 </section>
 
-                <section>
+              
+
+                <section class="masuk_parkir">
                     <div class="container-form">
                         <div class="title-header-left">Masuk Parkir</div>
-                        <form action="<?php echo base_url('Pengguna/aksi_masuk_parkir') ?>" method="post">
+                        <form onsubmit="confirmSubmission(event)"
+                            action="<?php echo base_url('Pengguna/aksi_masuk_parkir') ?>" method="post">
                             <div class="user_details">
                                 <div class="input_poxs">
                                     <span class="datails">Plat Nomor</span>
@@ -915,7 +907,7 @@
                                 </div>
                             </div> -->
                             <div class="button">
-                            <input type="submit" id="submit" class="submit" value="Kirim">
+                                <input type="submit" id="submit" class="submit" value="Kirim">
                             </div>
                         </form>
                     </div>
@@ -942,34 +934,7 @@
                         </form>
                     </div>
                 </section>
-                <!-- <section>
-                    <div class="container-form">
-                        <div class="title-header-left">Daftar Kendaraan</div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">Kode</th>
-                                    <th scope="col">Plat Nomor</th>
-                                    <th scope="col">Jenis </th>
-                                    <th scope="col">Merk </th>
-                                    <th scope="col">Jam Masuk </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>EP126</td>
-                                    <td>F 2987 H</td>
-                                    <td>Mobil</td>
-                                    <td>Honda</td>
-                                    <td>20.31</td>
-                                </tr>
 
-                            </tbody>
-                        </table>
-                    </div>
-                </section> -->
 
                 <?php $this->load->view('componen/footer'); ?>
 
@@ -982,6 +947,10 @@
         <!-- back to top area end -->
 
     </div><!-- #page -->
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>(function () {
             function maybePrefixUrlField() {

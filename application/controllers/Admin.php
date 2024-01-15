@@ -18,9 +18,15 @@ class Admin extends CI_Controller
             redirect(base_url() . 'auth');
         }
     }
-    
+
     public function index()
     {
+        // Mendapatkan jumlah kendaraan dari model
+        $data['jumlah_motor'] = $this->m_model->getJumlahKendaraan('motor');
+        $data['jumlah_mobil'] = $this->m_model->getJumlahKendaraan('mobil');
+        $data['jumlah_truk_bus_lainnya'] = $this->m_model->getJumlahKendaraan('truk');
+
+
         $data['daftar'] = $this->m_model->get_data('tb_daftar_parkir')->result();
         $this->load->view('admin/daftar_kendaraan', $data);
     }
@@ -30,7 +36,7 @@ class Admin extends CI_Controller
         $data['result'] = $this->m_model->get_data('history_parkir')->result();
         $this->load->view('admin/history', $data);
     }
- 
-   
+
+
 
 }

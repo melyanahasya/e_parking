@@ -8,6 +8,7 @@
 
     <title>E - Parking</title>
     <meta name='robots' content='max-image-preview:large' />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel='dns-prefetch' href='//use.fontawesome.com' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link rel="alternate" type="application/rss+xml" title="Itechie &raquo; Feed"
@@ -867,46 +868,61 @@
                                                 </div>
                                                 <div class="collapse navbar-collapse" id="itech_main_menu">
                                                     <ul id="menu-menu-1" class="navbar-nav menu-open text-lg-end">
-
                                                         <li id="menu-item-964"
                                                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor  menu-item-964">
                                                             <a href="<?php echo base_url("/") ?>">Tentang Kami</a>
                                                         </li>
-                                                        <li id="menu-item-964"
-                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor  menu-item-964">
-                                                            <a href="<?php echo base_url("pengguna") ?>">Home</a>
-                                                        </li>
+                                                        <?php $role = $this->session->userdata('role'); ?>
 
-                                                        <li id="menu-item-549"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                            <a
-                                                                href="<?php echo base_url("pengguna/daftar_kendaraan") ?>">Daftar
-                                                                Kendaraan</a>
-                                                        </li>
-                                                        <?php $user_role = $this->session->userdata('user_role'); ?>
+                                                        <?php if ($this->session->userdata('logged_in')): ?>
 
-                                                        <?php if ($user_role == 'admin'): ?>
+
+
+                                                            <?php if ($role == 'pengguna'): ?>
+
+                                                                <li id="menu-item-964"
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor  menu-item-964">
+                                                                    <a href="<?php echo base_url("pengguna") ?>">Home</a>
+                                                                </li>
+
+                                                                <li id="menu-item-549"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
+                                                                    <a
+                                                                        href="<?php echo base_url("pengguna/daftar_kendaraan") ?>">Daftar
+                                                                        Kendaraan</a>
+                                                                </li>
+                                                            <?php endif; ?>
+                                                            <?php if ($role == 'admin'): ?>
+                                                                <li id="menu-item-549"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-549">
+                                                                    <a href="<?php echo base_url("admin/") ?>">Daftar
+                                                                        Kendaraan</a>
+                                                                </li>
+                                                                <li id="menu-item-549"
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-549">
+                                                                    <a href="<?php echo base_url("admin/history_kendaraan") ?>">History
+                                                                        Kendaraan</a>
+                                                                </li>
+                                                            <?php endif; ?>
+
                                                             <li id="menu-item-549"
                                                                 class="menu-item menu-item-type-custom menu-item-object-custom menu-item-549">
-                                                                <a
-                                                                    href="<?php echo base_url("admin/history") ?>">History
-                                                                    Kendaraan</a>
+                                                                <a onclick="logout()">Logout</a>
                                                             </li>
+
+                                                        <?php else: ?>
+
+                                                            <li id="menu-item-549"
+                                                                class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
+                                                                <a href="<?php echo base_url('auth') ?>">Login</a>
+                                                            </li>
+
                                                         <?php endif; ?>
-                                                        <li id="menu-item-549"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                            <a href="<?php echo base_url('auth') ?>">Login</a>
 
-                                                        </li>
-
-
-                                                        <li id="menu-item-549"
-                                                            class="menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                            <a onclick="logout()">Logout</a>
-
-                                                        </li>
                                                     </ul>
                                                 </div>
+
+
 
                                             </div>
                                         </nav>
@@ -923,6 +939,7 @@
 
 
     </div>
+
     <script src="path-to-jquery/jquery.min.js"></script>
     <script src="path-to-bootstrap-js/bootstrap.min.js"></script>
     <script>
@@ -943,19 +960,7 @@
             });
         }
     </script>
-    <script>(function () {
-            function maybePrefixUrlField() {
-                const value = this.value.trim()
-                if (value !== '' && value.indexOf('http') !== 0) {
-                    this.value = 'http://' + value
-                }
-            }
 
-            const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
-            for (let j = 0; j < urlFields.length; j++) {
-                urlFields[j].addEventListener('blur', maybePrefixUrlField)
-            }
-        })();</script>
     <div class="td-search-popup" id="td-search-popup">
         <form action="https://wp-themes.solverwp.com/itechie/" class="search-form">
             <div class="form-group">
