@@ -812,7 +812,7 @@
         text-align: center;
     }
 
-    .data_kendaraan{
+    .data_kendaraan {
         margin-top: 6rem;
     }
 
@@ -840,16 +840,7 @@
         <?php $this->load->view('componen/navbar'); ?>
         <div id="content" class="site-content">
 
-            <!-- preloader area start -->
-            <div class="preloader" id="preloader">
-                <div class="preloader-inner">
-                    <div class="spinner">
-                        <div class="dot1"></div>
-                        <div class="dot2"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- preloader area end -->
+        
             <div data-elementor-type="wp-page" data-elementor-id="261" class="elementor elementor-261">
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-b034cb8 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
@@ -862,27 +853,19 @@
                                     data-id="a63a71b" data-element_type="widget"
                                     data-widget_type="itechie-banner-widget.default">
                                     <div class="elementor-widget-container">
-
                                         <div class="banner-area banner-area-3">
-                                            <div class="banner-slider slider-control-round owl-carousel">
-                                                <div class="item bg-overlay"
-                                                    style="background-image: url(https://png.pngtree.com/background/20230612/original/pngtree-line-of-parked-motorcycles-picture-image_3176176.jpg);">
-
-                                                    <div class="container">
-                                                        <div class="row justify-content-center">
-                                                            <div class="col-lg-9">
-                                                                <div class="banner-inner style-white text-center">
-                                                                    <h2 class="title s-animate-2">Data
-                                                                        <span>Kendaraan</span>
-                                                                    </h2>
-
-
-                                                                </div>
+                                            <div class="item bg-overlay"
+                                                style="background-image: url(https://png.pngtree.com/background/20230612/original/pngtree-line-of-parked-motorcycles-picture-image_3176176.jpg);">
+                                                <div class="container">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-lg-9">
+                                                            <div class="banner-inner style-white text-center">
+                                                                <h2 class="title s-animate-2">Data
+                                                                    <span>Kendaraan</span></h2>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -891,7 +874,6 @@
                         </div>
                     </div>
                 </section>
-
 
                 <section class="data_kendaraan">
                     <div class="container-form">
@@ -913,36 +895,44 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $no = 0;
-                                    foreach ($daftar as $row):
-                                        $no++ ?>
-                                        <tr>
-                                            <td>
-                                                <?php echo $no ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->username ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->kode ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->plat_nomor ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->jenis ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->merk ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->status ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $row->jam_masuk ?>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
+                                    <?php
+                                    $no = 0;
+                                    if (empty($daftar)) {
+                                        echo '<tr><td colspan="8"> Data kosong</td></tr>';
+                                    } else {
+                                        foreach ($daftar as $row) {
+                                            $no++;
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <?php echo $no ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->username ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->kode ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->plat_nomor ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->jenis ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->merk ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->status ?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $row->jam_masuk ?>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

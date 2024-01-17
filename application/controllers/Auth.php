@@ -26,40 +26,6 @@ class Auth extends CI_Controller
         $this->load->view('auth/register_admin');
     }
 
-
-
-    //function aksi login
-    // public function aksi_login()
-    // {
-    //     $email = $this->input->post('email', true);
-    //     $password = $this->input->post('password', true);
-    //     $data = ['email' => $email,];
-    //     $query = $this->m_model->getwhere('tb_login', $data);
-    //     $result = $query->row_array();
-
-    //     if (!empty($result) && md5($password) === $result['password']) {
-    //         $data = [
-    //             'loged_in' => TRUE,
-    //             'email' => $result['email'],
-    //             'username' => $result['username'],
-    //             'role' => $result['role'],
-    //             'id' => $result['id'],
-    //             'last_activity' => time(), // Menambahkan waktu terakhir akses
-    //         ];
-    //         $this->session->set_userdata($data);
-    //         if ($this->session->userdata('role') == 'admin') {
-    //             redirect(base_url() . 'admin/');
-    //         }
-    //         if ($this->session->userdata('role') == 'pengguna') {
-    //             redirect(base_url() . 'pengguna/');
-    //         } else {
-    //             redirect(base_url() . ' auth');
-    //         }
-    //     } else {
-    //         redirect(base_url() . 'auth');
-    //     }
-    // }
-
     public function aksi_login()
     {
 

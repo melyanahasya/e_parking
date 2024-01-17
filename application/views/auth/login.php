@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E - Parking</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         /* Fontawesome */
@@ -203,7 +203,7 @@
                     </div>
 
 
-                    <button name="submit" type="submit">Login</button>
+                    <button onclick="handleLogin()" name="submit" type="submit">Login</button>
                 </form>
             </div>
         </div>
@@ -211,7 +211,6 @@
 
 
     <script>
-
         function togglePassword() {
             var passwordInput = document.getElementById("password");
             var passwordToggle = document.querySelector(".password-toggle-login");
@@ -226,10 +225,27 @@
                 passwordToggle.classList.add("fa-eye-slash");
             }
         }
-
-      
-
     </script>
+
+<script>
+    function handleLogin() {
+      
+        Swal.fire({
+            icon: 'success',
+            title: 'Login berhasil!',
+            text: 'Selamat datang kembali!',
+            showConfirmButton: false, 
+            timer: 3000, 
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'tentangKami'; 
+            }
+        });
+    }
+
+    document.getElementById('btn-login').addEventListener('click', handleLogin);
+</script>
+
 </body>
 
 </html>

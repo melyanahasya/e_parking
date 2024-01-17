@@ -26,10 +26,10 @@ class Admin extends CI_Controller
         $data['jumlah_mobil'] = $this->m_model->getJumlahKendaraan('mobil');
         $data['jumlah_truk_bus_lainnya'] = $this->m_model->getJumlahKendaraan('truk');
 
-
         $data['daftar'] = $this->m_model->get_data('tb_daftar_parkir')->result();
         $this->load->view('admin/daftar_kendaraan', $data);
     }
+
 
     public function history_kendaraan()
     {
@@ -37,6 +37,12 @@ class Admin extends CI_Controller
         $this->load->view('admin/history', $data);
     }
 
-
+    // function hapus data
+    public function delete_data($id)
+    {
+        $this->m_model->delete_relasi($id);
+        $this->m_model->delete('tb_daftar_parkir', 'id', $id);
+        redirect(base_url('admin/'));
+    }
 
 }
