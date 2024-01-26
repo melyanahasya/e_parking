@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
-        /* Fontawesome */
+        /* Cdn Fontawesome */
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
         body {
@@ -211,68 +211,28 @@
                         <input id="role" required="" value="admin" type="hidden" name="role" class="input">
                     </div>
                     <p class="subArteris">*Gunakan kombinasi minimal 8 karakter dengan huruf dan angka</p>
-                    <button type="submit">Register</button>
+                    <button onclick="handleRegister()" type="submit">Register</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- <script>
-        // Wait for the DOM to load before running the script
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // Get the remember-me container, checkbox, and custom checkbox from the DOM
-            var rememberMeContainer = document.querySelector('.remember-me');
-            var checkbox = rememberMeContainer.querySelector('input[type="checkbox"]');
-            var checkboxCustom = rememberMeContainer.querySelector('.checkbox-custom');
-
-            // Add a click event listener to the remember-me container
-            rememberMeContainer.addEventListener('click', function (event) {
-                // If the clicked element isn't the checkbox itself, toggle the checkbox
-                if (event.target !== checkbox) {
-                    checkbox.checked = !checkbox.checked;
-
-                    // Manually trigger the change event on the checkbox
-                    var changeEvent = new Event('change', {
-                        'bubbles': true,
-                        'cancelable': true
-                    });
-                    checkbox.dispatchEvent(changeEvent);
-                }
-            });
-
-            // Add a change event listener to the checkbox
-            checkbox.addEventListener('change', function () {
-                // This function will be called any time the checkbox is checked or unchecked
-                // You can add any additional functionality you need here
-            });
-
-            // Optional: If you have a form and want to perform a custom submit action
-            var form = document.querySelector('.login-form');
-            form.addEventListener('submit', function (event) {
-                // Prevent the default form submit
-                event.preventDefault();
-
-                // You can add custom form submit functionality here
-                // For example, you could use AJAX to submit the form data to your server
-            });
-
-            // Additional event listeners and functionality can be added below
-        });
-
-    </script> -->
-
     <script>
-        <?php if ($this->session->flashdata('error_email')): ?>
-            Swal.fire({
-                icon: 'error',
-                title: 'Registrasi Gagal',
-                text: '<?= $this->session->flashdata('error_email'); ?>',
-                timer: 2500,
-                showConfirmButton: false,
-                timerProgressBar: true
-            });
-        <?php endif; ?>
+      function handleRegister() {
+      
+      Swal.fire({
+          icon: 'success',
+          title: 'Register berhasil!',
+          showConfirmButton: false, 
+          timer: 1500, 
+      }).then((result) => {
+          if (result.isConfirmed) {
+              window.location.href = '/'; 
+          }
+      });
+  }
+
+  document.getElementById('btn-register').addEventListener('click', handleRegister);
 
         function togglePassword() {
             var passwordInput = document.getElementById("password");

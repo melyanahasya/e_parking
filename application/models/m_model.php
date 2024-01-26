@@ -7,6 +7,20 @@ class M_model extends CI_Model
         return $this->db->get($table);
     }
 
+    public function count_all_records() {
+        return $this->db->count_all('history_parkir');
+    }
+
+    
+
+    public function fetch_records($limit, $start) {
+        $this->db->select('history_parkir.*, tb_login.username');
+        $this->db->from('history_parkir');
+        $this->db->join('tb_login', 'history_parkir.id_pengguna = tb_login.id', 'left');
+        $this->db->limit($limit, $start);
+        return $this->db->get()->result();
+    }
+
     public function get_by_id($tabel, $id_column, $id)
     {
         $data = $this->db->where($id_column, $id)->get($tabel);
@@ -36,7 +50,9 @@ class M_model extends CI_Model
         return $this->db->insert_id($table);
     }
 
+    
 
+    // Membuat code acak 
     public function generateRandomCode($length = 6)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -48,8 +64,8 @@ class M_model extends CI_Model
 
         return $randomCode;
     }
-  
-    // functin register admin
+
+    // Function Register admin
     public function register_admin($email, $username, $role, $password)
     {
         $data = array(
@@ -62,7 +78,7 @@ class M_model extends CI_Model
         $this->db->insert('tb_login', $data);
     }
 
-    // function register user
+    // Function register Pengguna
     public function register_user($email, $username, $role, $password)
     {
         $data = array(
@@ -74,6 +90,8 @@ class M_model extends CI_Model
 
         $this->db->insert('tb_login', $data);
     }
+
+    // Memanggil id_pengguna untuk menampilkan username
     public function getByIdPengguna($idPengguna)
     {
         $this->db->select('tb_daftar_parkir.*, tb_login.username');
@@ -83,16 +101,21 @@ class M_model extends CI_Model
         return $query->result();
     }
 
-
+    // Mengecek apakah kendaraan sudah terparkir
     public function cek_kendaraan_parkir($plat_nomor)
     {
+        $id_pengguna_login = $this->session->userdata('id');
+    
         $this->db->where('plat_nomor', $plat_nomor);
+        $this->db->where('id_pengguna', $id_pengguna_login);
         $this->db->where('status', 'sedang parkir');
         $query = $this->db->get('tb_daftar_parkir');
-
+    
         return $query->num_rows() > 0;
     }
+    
 
+    //  Get jumlah data kendaraan
     public function getJumlahKendaraan($jenis)
     {
         if ($jenis === 'lainnya') {
@@ -107,7 +130,7 @@ class M_model extends CI_Model
 
     public function getParkirData($id_parkir)
     {
-        $query = $this->db->get_where('tb_daftar_parkir', array('kode' => $id_parkir));
+        $query = $this->db->get_where('tb_daftar_parkir', array('nominal_bayar' => $id_parkir));
         return $query->row_array();
     }
 
@@ -122,28 +145,52 @@ class M_model extends CI_Model
         return true;
     }
 
-
-    public function keluarParkir($kode)
+    // Validate ketika keluar parkir otomatis data terhapus
+    public function keluarParkir($nominal_bayar)
     {
-
-        $this->db->where('kode', $kode);
+        $this->db->where('nominal_bayar', $nominal_bayar);
         $this->db->delete('tb_daftar_parkir');
     }
 
+    // Validate ketika keluar parkir -> data terhapus -> menyimpan data ke history
     public function simpanHistoryParkir($data)
     {
         $this->db->insert('history_parkir', $data);
     }
 
     // Ambil data kendaraan sebelum keluar
-    public function getDataKendaraan($kode)
+    public function getDataKendaraan($nominal_bayar)
     {
-        $this->db->select('jam_masuk, plat_nomor, merk, jenis');
+        $this->db->select('kode,jam_masuk, id_pengguna, plat_nomor, merk, jenis');
+        $this->db->from('tb_daftar_parkir');
+        $this->db->where('nominal_bayar', $nominal_bayar);
+        $query = $this->db->get();
+
+        return $query->row_array();
+    }
+
+
+    public function getTmbhOrderCk($username)
+    {
+        $this->db->select('tb_login.*, username');
+        $this->db->from('tb_login');
+        // $this->db->join('tb_order', 'tb_order_ck.id_ck = tb_order.id_order_ck', 'left');
+        $this->db->where('username', $username);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    // Mengambil data untuk struktur pembayaran
+    public function get_invoice_data($kode)
+    {
+        $this->db->select('*');
         $this->db->from('tb_daftar_parkir');
         $this->db->where('kode', $kode);
         $query = $this->db->get();
 
         return $query->row_array();
     }
+
+
 
 }

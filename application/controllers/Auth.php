@@ -17,18 +17,15 @@ class Auth extends CI_Controller
     }
     public function register_pengguna()
     {
-
         $this->load->view('auth/register_pengguna');
     }
     public function register_admin()
     {
-
         $this->load->view('auth/register_admin');
     }
 
     public function aksi_login()
     {
-
         $email = $this->input->post('email', true);
         $password = $this->input->post('password', true);
         $data = ['email' => $email,];
@@ -40,7 +37,6 @@ class Auth extends CI_Controller
             $data = [
                 'logged_in' => TRUE,
                 'email' => $result['email'],
-                'username' => $result['username'],
                 'role' => $result['role'],
                 'id' => $result['id'],
             ];
@@ -59,7 +55,6 @@ class Auth extends CI_Controller
 
     public function aksi_register_admin()
     {
-        // Validasi form
         $this->form_validation->set_rules('email', 'Email', 'trim|required|regex_match[/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/]');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('role', 'Role', 'required');
@@ -75,7 +70,6 @@ class Auth extends CI_Controller
             $role = $this->input->post('role');
             $password = md5($this->input->post('password'));
 
-            // Panggil model untuk menyimpan data ke database
             $this->m_model->register_admin($email, $username, $role, $password);
 
             redirect('auth');
@@ -84,7 +78,6 @@ class Auth extends CI_Controller
 
     public function aksi_register_pengguna()
     {
-        // Validasi form
         $this->form_validation->set_rules('email', 'Email', 'trim|required|regex_match[/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/]');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('role', 'Role', 'required');
@@ -107,13 +100,10 @@ class Auth extends CI_Controller
         }
     }
 
-
-
     function logout()
     {
         $this->session->sess_destroy();
         redirect(base_url('/'));
     }
-
 
 }

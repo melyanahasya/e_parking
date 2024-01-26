@@ -194,7 +194,7 @@
                     <h2 class="login-title"><i class="fas fa-user-circle"></i> Register</h2>
                     <div class="form-control">
                         <i class="fas fa-user icon"></i>
-                        <input type="text" placeholder="Username" name="username" id="username" required>
+                        <input  type="text" placeholder="Username" name="username" id="username" required>
                     </div>
                     <div class="form-control">
                         <i class="fas fa-user icon"></i>
@@ -210,15 +210,29 @@
                         <input id="role" required="" value="pengguna" type="hidden" name="role" class="input">
                     </div>
                     <p class="subArteris">*Gunakan kombinasi minimal 8 karakter dengan huruf dan angka</p>
-                    <button type="submit">Register</button>
+                    <button onclick="handleRegister()" type="submit">Register</button>
                 </form>
             </div>
         </div>
     </div>
-
     <script>
-       
+    function handleRegister() {
+      
+        Swal.fire({
+            icon: 'success',
+            title: 'Register berhasil!',
+            showConfirmButton: false, 
+            timer: 1500, 
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/'; 
+            }
+        });
+    }
 
+    document.getElementById('btn-register').addEventListener('click', handleRegister);
+</script>
+    <script>
 
         function togglePassword() {
             var passwordInput = document.getElementById("password");

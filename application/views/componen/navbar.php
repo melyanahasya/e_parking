@@ -354,7 +354,7 @@
         }
     }
 
-   
+
 
     @media all and (max-width: 575px) {
         .td-search-popup.active .search-form {
@@ -368,9 +368,9 @@
             display: none;
         }
 
-        .res-open{ 
-        margin-left: 10px;
-    }
+        .res-open {
+            margin-left: 10px;
+        }
     }
 
     .bl-gray-1 {
@@ -424,7 +424,6 @@
     .logo p {
         color: white;
     }
-    
 </style>
 
 <body
@@ -473,11 +472,7 @@
                                                             alt="">
                                                     </a>
                                                 </div>
-                                                <div class="nav-right-part nav-right-part-mobile">
-                                                    <a class="search-bar-btn" href="#">
-                                                        <i class="fa fa-search"></i>
-                                                    </a>
-                                                </div>
+                                                
                                                 <div class="collapse navbar-collapse" id="itech_main_menu">
                                                     <ul id="menu-menu-1" class="navbar-nav menu-open text-lg-end">
                                                         <li id="menu-item-964"
@@ -494,24 +489,33 @@
 
                                                                 <li id="menu-item-964"
                                                                     class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor  menu-item-964">
-                                                                    <a class="res-open" href="<?php echo base_url("pengguna") ?>">Home</a>
+                                                                    <a class="res-open"
+                                                                        href="<?php echo base_url("pengguna") ?>">Home</a>
                                                                 </li>
 
                                                                 <li id="menu-item-549"
                                                                     class=" menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                                    <a class="res-open" href="<?php echo base_url("pengguna/data_kendaraan") ?>">Data
+                                                                    <a class="res-open"
+                                                                        href="<?php echo base_url("pengguna/data_kendaraan") ?>">Data
                                                                         Kendaraan</a>
+                                                                </li>
+                                                                <li id="menu-item-549"
+                                                                    class=" menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
+                                                                    <a class="res-open"
+                                                                        href="<?php echo base_url("pengguna/pembayaran") ?>">Pembayaran</a>
                                                                 </li>
                                                             <?php endif; ?>
                                                             <?php if ($role == 'admin'): ?>
                                                                 <li id="menu-item-549"
                                                                     class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-549">
-                                                                    <a class="res-open" href="<?php echo base_url("admin/") ?>">Daftar
+                                                                    <a class="res-open"
+                                                                        href="<?php echo base_url("admin/") ?>">Daftar
                                                                         Kendaraan</a>
                                                                 </li>
                                                                 <li id="menu-item-549"
                                                                     class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-549">
-                                                                    <a class="res-open" href="<?php echo base_url("admin/history_kendaraan") ?>">History
+                                                                    <a class="res-open"
+                                                                        href="<?php echo base_url("admin/history_kendaraan") ?>">History
                                                                         Kendaraan</a>
                                                                 </li>
                                                             <?php endif; ?>
@@ -525,16 +529,13 @@
 
                                                             <li id="menu-item-549"
                                                                 class=" menu-item menu-item-type-custom menu-item-object-custom  menu-item-549">
-                                                                <a class="res-open" href="<?php echo base_url('auth') ?>">Login</a>
+                                                                <a class="res-open"
+                                                                    href="<?php echo base_url('auth') ?>">Login</a>
                                                             </li>
-
                                                         <?php endif; ?>
 
                                                     </ul>
                                                 </div>
-
-
-
                                             </div>
                                         </nav>
                                         <!-- navbar end -->
@@ -550,6 +551,8 @@
 
 
     </div>
+    <script src="path-to-jquery/jquery.min.js"></script>
+    <script src="path-to-bootstrap-js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -557,7 +560,7 @@
             $('.toggle-btn').on('click', function () {
                 var targetMenu = $($(this).data('target'));
                 targetMenu.toggleClass('show');
-                
+
                 var isExpanded = targetMenu.hasClass('show');
                 $(this).attr('aria-expanded', isExpanded);
             });
@@ -568,28 +571,33 @@
                 $('.toggle-btn').attr('aria-expanded', false);
             });
         });
-    </script>
 
-    <script src="path-to-jquery/jquery.min.js"></script>
-    <script src="path-to-bootstrap-js/bootstrap.min.js"></script>
-    <script>
+
         function logout() {
             Swal.fire({
                 title: 'Konfirmasi',
-                text: 'Apakah Anda Yakin Ingin Keluar ?',
+                text: 'Apakah Anda Yakin Ingin Keluar?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#198754',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Ya, Keluar ',
+                confirmButtonText: 'Ya, Keluar',
                 cancelButtonText: 'Batal'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = "<?php echo base_url('auth/logout'); ?>";
+
+                    Swal.fire({
+                        title: 'Sukses!',
+                        text: 'Anda berhasil keluar.',
+                        icon: 'success',
+                        showConfirmButton: false,
+                    });
                 }
             });
         }
     </script>
+
 
     <div class="td-search-popup" id="td-search-popup">
         <form action="https://wp-themes.solverwp.com/itechie/" class="search-form">

@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
-        /* Fontawesome */
+        /* Cdn Fontawesome */
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
         body {
@@ -29,7 +29,6 @@
             background: url('https://img.freepik.com/premium-vector/men-woman-co-working-doing-their-job_24877-61919.jpg') no-repeat center center;
             display: none;
             margin-left: 5%;
-
         }
 
         .right-section {
@@ -171,7 +170,7 @@
             margin-left: 92%;
         }
 
-        /*Responsive*/
+        /*Code Responsive*/
         @media screen and (min-width: 768px) {
             .left-section {
                 display: block;
@@ -202,7 +201,6 @@
                                 href="<?php echo base_url('auth/register_pengguna') ?>">Register</a> </label>
                     </div>
 
-
                     <button onclick="handleLogin()" name="submit" type="submit">Login</button>
                 </form>
             </div>
@@ -227,24 +225,24 @@
         }
     </script>
 
-<script>
-    function handleLogin() {
-      
-        Swal.fire({
-            icon: 'success',
-            title: 'Login berhasil!',
-            text: 'Selamat datang kembali!',
-            showConfirmButton: false, 
-            timer: 3000, 
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = 'tentangKami'; 
-            }
-        });
-    }
+    <script>
+        function handleLogin() {
 
-    document.getElementById('btn-login').addEventListener('click', handleLogin);
-</script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Login berhasil!',
+                text: 'Selamat datang kembali!',
+                showConfirmButton: false,
+                timer: 3000,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'tentangKami';
+                }
+            });
+        }
+
+        document.getElementById('btn-login').addEventListener('click', handleLogin);
+    </script>
 
 </body>
 

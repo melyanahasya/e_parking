@@ -23,12 +23,51 @@
         content="Elementor 3.17.3; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
 
     <style id='global-styles-inline-css' type='text/css'>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 4px 13px;
+            margin: 0 4px;
+            border-radius: 4px;
+            border: 1px solid #365486;
+            background-color: #365486;
+        }
+
+        .pagination a.active,
+        .pagination a:hover {
+            color: #365486;
+            background-color: #fff;
+        }
+
+        .pagination .disabled {
+            color: #999999;
+            pointer-events: none;
+            background-color: #f5f5f5;
+            border-color: #ddd;
+        }
+
+        .pagination a:first-child {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .pagination a:last-child {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
         .container-form {
             max-width: 90%;
             width: 100%;
-            /* margin-top: 5%; */
             padding: 25px 30px;
-            /* margin: 5%; */
             border-radius: 5px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
@@ -69,7 +108,6 @@
             font-size: 16px;
             border-bottom-width: 2px;
             transition: all 0.3s ease;
-
         }
 
         .user_details .input_poxs input:focus,
@@ -126,8 +164,6 @@
             .user_details::-webkit-scrollber {
                 width: 0;
             }
-
-
         }
 
         tbody {
@@ -234,7 +270,7 @@
         <?php $this->load->view('componen/navbar'); ?>
         <div id="content" class="site-content">
 
-          
+
             <div data-elementor-type="wp-page" data-elementor-id="261" class="elementor elementor-261">
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-b034cb8 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
@@ -296,7 +332,7 @@
                         <div style="background:#365486; color:white; text-align: center; padding: 1%;"
                             class="title-header-left">Daftar Kendaraan</div>
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="width: 3rem" scope="col">No</th>
@@ -310,7 +346,7 @@
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody style="text-transform: capitalize;">
                                     <?php
                                     $no = 0;
                                     if (empty($daftar)) {
@@ -324,7 +360,7 @@
                                                     <?php echo $no ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo $row->id_pengguna ?>
+                                                    <?php echo $row->username ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $row->kode ?>
@@ -358,6 +394,9 @@
                                 </tbody>
 
                             </table>
+                            <div class="pagination">
+                                <?php echo $this->pagination->create_links(); ?>
+                            </div>
                         </div>
 
 
@@ -368,6 +407,7 @@
 
             </div>
         </div>
+
         <!-- back to top area start -->
         <div class="back-to-top">
             <span class="back-top"><i class="fa fa-angle-up"></i></span>

@@ -12,7 +12,6 @@
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 
-
     <style id='global-styles-inline-css' type='text/css'>
         .container-form {
             max-width: 90%;
@@ -24,7 +23,67 @@
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
-        .container .title-header-left {}
+        .container form .user_details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        form .user_details .input_poxs {
+            margin-bottom: 15px;
+            margin: 20px 0 12px 0;
+            width: 100%;
+        }
+
+        .user_details .input_poxs .datails {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .user_details .input_poxs input {
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+
+        }
+
+        .user_details .input_poxs input:focus,
+        .user_details .input_poxs input:valid {
+            border-color: #9b59b6;
+        }
+
+        form input[type="radio"] {
+            display: none;
+        }
+
+        form .button {
+            height: 45px;
+            margin: 45px 0;
+        }
+
+        form .button input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            background: linear-gradient(123deg, #71b8e7, #9b59b6);
+        }
+
+        form .button input :hover {
+            background: linear-gradient(-123deg, #71b8e7, #9b59b6);
+        }
 
         @media (max-width: 584px) {
             .container {
@@ -45,6 +104,9 @@
                 overflow: scroll;
             }
 
+            .user_details::-webkit-scrollber {
+                width: 0;
+            }
 
             .masuk_parkir {
                 margin-top: 5rem;
@@ -63,7 +125,10 @@
 
         <div id="content" class="site-content">
 
+
+
             <div data-elementor-type="wp-page" data-elementor-id="261" class="elementor elementor-261">
+
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-b034cb8 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                     data-id="b034cb8" data-element_type="section">
@@ -82,7 +147,7 @@
                                                     <div class="row justify-content-center">
                                                         <div class="col-lg-9">
                                                             <div class="banner-inner style-white text-center">
-                                                                <h2 class="title s-animate-2">Home</h2>
+                                                                <h2 class="title s-animate-2">Pembayaran</h2>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -96,70 +161,60 @@
                     </div>
                 </section>
 
-                <section class="masuk_parkir">
+                <section>
+                    
                     <div class="container-form">
-                        <div class="title-header-left">Masuk Parkir</div>
-                        <form onsubmit="confirmSubmission(event)"
-                            action="<?php echo base_url('Pengguna/aksi_masuk_parkir') ?>" method="post">
+                        <!-- <div class="title-header-left">Pembayaran</div> -->
+                        <form method="post" action="<?= base_url('Pengguna/aksi_keluar'); ?>">
                             <div class="user_details">
                                 <div class="input_poxs">
-                                    <span class="datails">Plat Nomor</span>
-                                    <input type="text" name="plat_nomor" placeholder="Plat Nomor..." required>
+                                    <span for="nominal" class="datails">Nominal</span>
+                                    <input name="nominal_bayar" type="number" placeholder="Nominal..." required>
+                             
                                 </div>
-                                <div class="input_poxs">
-                                    <span class="datails">Merk Kendaraan</span>
-                                    <input type="text" style="text-transform: capitalize;" name="merk"
-                                        placeholder="Merk Kendaraan..." required>
-                                </div>
-                                <div class="input_poxs">
-                                    <span class="datails">Jenis Kendaraan</span>
-                                    <input type="text" style="text-transform: capitalize;" name="jenis"
-                                        placeholder="Jenis Kendaraan..." required>
-                                </div>
+
+                                <p>*Diharapkan memasukkan uang pas</p>
+                                <p>Tarif : Rp 2. 000, 00 / 12 jam</p>
+
                             </div>
 
                             <div class="button">
-                                <input type="submit" id="submit" class="submit" value="Kirim">
+                                <input type="submit" onclick="" value="Kirim">
                             </div>
                         </form>
                     </div>
                 </section>
 
+                
+
+
                 <?php $this->load->view('componen/footer'); ?>
 
             </div>
         </div>
-        <!-- back to top area start -->
         <div class="back-to-top">
             <span class="back-top"><i class="fa fa-angle-up"></i></span>
         </div>
-        <!-- back to top area end -->
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
     <div class="body-overlay" id="body-overlay"></div>
-</body>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script>
-    // Fungsi untuk menampilkan SweetAlert
-    function Keluar_parkir() {
-        Swal.fire({
-            icon: 'success',
-            title: 'Berhasil Keluar Parkir!',
-            text: 'Terima kasih atas kunjungan anda.',
-            showConfirmButton: false,
-            timer: 10000
-        });
-    }
-    document.getElementById('submit').addEventListener('click', function () {
-        showSweetAlert();
-    });
-</script>
 
-<?php if (isset($error_message)): ?>
+    <!-- <?php if ($this->session->flashdata('alert')): ?>
+        <script>
+            Swal.fire({
+                title: '<?= $this->session->flashdata('alert')['type'] == 'success' ? 'Pembayaran Berhasil' : 'Kesalahan'; ?>',
+                text: '<?= $this->session->flashdata('alert')['message']; ?>',
+                icon: '<?= $this->session->flashdata('alert')['type'] == 'success' ? 'success' : 'error'; ?>',
+            });
+        </script>
+    <?php endif; ?> -->
+
+    <?php if (isset($error_message)): ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             Swal.fire({
@@ -174,6 +229,27 @@
         });
     </script>
 <?php endif; ?>
+    <?php if (isset($success_message)): ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'success',
+                title: 'Terjadi Kesalahan',
+                text: '<?php echo $success_message; ?>',
+                showConfirmButton: false
+            });
+            setTimeout(function () {
+                window.location.href = '<?php echo $redirect_url; ?>';
+            }, 2000);
+        });
+    </script>
+<?php endif; ?>
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
 
 </html>

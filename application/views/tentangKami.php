@@ -10,25 +10,9 @@
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//use.fontawesome.com' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
-    <link rel="alternate" type="application/rss+xml" title="Itechie &raquo; Feed"
-        href="https://wp-themes.solverwp.com/itechie/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="Itechie &raquo; Comments Feed"
-        href="https://wp-themes.solverwp.com/itechie/comments/feed/" />
-    <script type="text/javascript">
-        /* <![CDATA[ */
-        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/wp-themes.solverwp.com\/itechie\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2" } };
-        /*! This file is auto-generated */
-        !function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff", "\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
-        /* ]]> */
-    </script>
 
-    <link rel="alternate" type="application/json+oembed"
-        href="https://wp-themes.solverwp.com/itechie/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp-themes.solverwp.com%2Fitechie%2Fhome-three%2F" />
-    <link rel="alternate" type="text/xml+oembed"
-        href="https://wp-themes.solverwp.com/itechie/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwp-themes.solverwp.com%2Fitechie%2Fhome-three%2F&#038;format=xml" />
-    <meta name="generator"
-        content="Elementor 3.17.3; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints, block_editor_assets_optimize, e_image_loading_optimization; settings: css_print_method-external, google_font-enabled, font_display-swap">
-    <style type="text/css">
+
+    <style type="text/css" id="wp-custom-css">
         h1,
         h2,
         h3,
@@ -42,127 +26,107 @@
         .single-blog-inner .single-blog-details p {
             color: #696969;
         }
-    </style>
 
-    <meta name="msapplication-TileImage"
-        content="https://wp-themes.solverwp.com/itechie/wp-content/uploads/2022/02/cropped-logo-300x300.png" />
-</head>
+        @media all and (max-width: 1599px) {
+            .home-2-counter .single-exp-inner.style-white h2 {
+                font-size: 40px !important;
+            }
 
-<style type="text/css" id="wp-custom-css">
-    @media all and (max-width: 1599px) {
+            .home-2-counter .section-title {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media all and (max-width: 991px) {
+            .navbar {
+                padding: 4px 0;
+            }
+
+            .toggle-btn {
+                top: 2px;
+            }
+
+            .testimonial-nav-slider-2 {
+                left: 63% !important;
+                bottom: 120px !important;
+            }
+        }
+
+        @media all and (max-width: 767px) {
+            .testimonial-nav-slider-2 {
+                left: 20px !important;
+            }
+
+            .testimonial-thumb-2 .single-testimonial-inner .details {
+                padding: 30px 20px 124px;
+            }
+
+            .testimonial-thumb-2 .thumb .quote-wrap {
+                left: -20px;
+                right: auto;
+                bottom: -20px;
+            }
+
+            .text_pengertian {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+
+        @media all and (max-width: 575px) {
+            .td-search-popup.active .search-form {
+                visibility: visible;
+                opacity: 1;
+                width: 90%;
+                z-index: 9999;
+            }
+
+            .banner-inner.style-white .content br {
+                display: none;
+            }
+
+        }
+
+        .bl-gray-1 {
+            border-left: 1px solid #CDD1D8;
+            padding-left: 20px;
+        }
+
         .home-2-counter .single-exp-inner.style-white h2 {
-            font-size: 40px !important;
+            font-size: 80px;
+            line-height: 1;
+            font-weight: 700;
         }
 
         .home-2-counter .section-title {
-            margin-bottom: 40px;
-        }
-    }
-
-    @media all and (max-width: 991px) {
-        .navbar {
-            padding: 4px 0;
+            margin-bottom: 80px;
         }
 
-        .toggle-btn {
-            top: 2px;
+        .itechie-footer-builder .mc4wp-response {
+            position: absolute;
+            bottom: 0;
+            font-size: 13px;
+            color: #fff;
         }
 
-        .testimonial-nav-slider-2 {
-            left: 63% !important;
-            bottom: 120px !important;
-        }
-    }
+        .itechie-footer-builder .mc4wp-response p {
+            color: #fff;
 
-
-
-    @media all and (max-width: 767px) {
-        .testimonial-nav-slider-2 {
-            left: 20px !important;
         }
 
-        .testimonial-thumb-2 .single-testimonial-inner .details {
-            padding: 30px 20px 124px;
+        .single-testimonial-inner.style-two.text-center {
+            margin-top: 0;
         }
 
-        .testimonial-thumb-2 .thumb .quote-wrap {
-            left: -20px;
-            right: auto;
-            bottom: -20px;
+        .logo .logo-images {
+            display: flex;
+
         }
 
-        .text_pengertian {
-            margin-left: 10px;
-            margin-right: 10px;
+        .logo p {
+            color: white;
         }
-    }
-
-    @media all and (max-width: 575px) {
-        .td-search-popup.active .search-form {
-            visibility: visible;
-            opacity: 1;
-            width: 90%;
-            z-index: 9999;
-        }
-
-        .banner-inner.style-white .content br {
-            display: none;
-        }
-
-    }
-
-    .bl-gray-1 {
-        border-left: 1px solid #CDD1D8;
-        padding-left: 20px;
-    }
-
-    .home-2-counter .single-exp-inner.style-white h2 {
-        font-size: 80px;
-        line-height: 1;
-        font-weight: 700;
-    }
-
-    .home-2-counter .section-title {
-        margin-bottom: 80px;
-    }
-
-    .navbar-top ul li p,
-    .navbar-top ul li a {
-        text-transform: capitalize;
-    }
-
-    .navbar-top ul li p i {
-        margin-right: 7px;
-        float: left;
-        margin-top: 0px;
-        font-size: 15px;
-    }
-
-    .itechie-footer-builder .mc4wp-response {
-        position: absolute;
-        bottom: 0;
-        font-size: 13px;
-        color: #fff;
-    }
-
-    .itechie-footer-builder .mc4wp-response p {
-        color: #fff;
-
-    }
-
-    .single-testimonial-inner.style-two.text-center {
-        margin-top: 0;
-    }
-
-    .logo .logo-images {
-        display: flex;
-
-    }
-
-    .logo p {
-        color: white;
-    }
-</style>
+    </style>
 
 <body
     class="page-template page-template-elementor_header_footer page page-id-261 itechie-core elementor-default elementor-template-full-width elementor-kit-17 elementor-page elementor-page-261">
@@ -172,7 +136,7 @@
         <?php $this->load->view('componen/navbar'); ?>
         <div id="content" class="site-content">
 
-        
+
             <div data-elementor-type="wp-page" data-elementor-id="261" class="elementor elementor-261">
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-b034cb8 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
@@ -186,14 +150,14 @@
                                     data-widget_type="itechie-banner-widget.default">
                                     <div class="elementor-widget-container">
                                         <div class="banner-area banner-area-3">
-                                        
+
                                             <div class="item bg-overlay"
                                                 style="background-image: url(https://png.pngtree.com/background/20230612/original/pngtree-line-of-parked-motorcycles-picture-image_3176176.jpg);">
                                                 <div class="container">
                                                     <div class="row justify-content-center">
                                                         <div class="col-lg-9">
                                                             <div class="banner-inner style-white text-center">
-                                                              
+
                                                                 <h2 class="title s-animate-2">Tentang <span>Kami</span>
                                                                 </h2>
                                                             </div>
@@ -233,7 +197,6 @@
                                                 <div class="row justify-content-center">
                                                     <div class="col-xl-6 col-lg-7">
                                                         <div class="section-title text-center">
-                                                            <!-- <h5 class="sub-title double-line">Our Service</h5> -->
 
                                                             <h2 class="title">Cara Pakai E - Parking
                                                             </h2>
@@ -288,9 +251,10 @@
                                                                 <i class="icomoon-megaphone"></i>
                                                             </div>
                                                             <div class="details">
-                                                                <h3><a>Keluar Parkir</a></h3>
-                                                                <p>Silahkan masukkan kode yang anda dapat setelah masuk
-                                                                    parkir untuk keluar parkir, lalu kirim
+                                                                <h3><a>Pembayaran</a></h3>
+                                                                <p>Untuk melakukan pembayaran anda anda memasukkan
+                                                                    nominal seharga
+                                                                    Rp 2.000,00 per 12 jam
                                                                 </p>
                                                                 <a class="read-more-btn"><i
                                                                         class="fa fa-arrow-right"></i></a>
@@ -333,7 +297,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 text_pengertian">
-                                                        <div class="section-title px-lg-5 mb-0">
+                                                        <div class="section-title px-lg-5 mb-0" style="margin-top:9%;">
                                                             <h5 class="sub-title right-line">E - Parking
                                                             </h5>
                                                             <h2 class="title">Pengelolaan Retribusi Parkir Elektronik
@@ -344,7 +308,8 @@
 
 
                                                             </p>
-                                                            <p class="content">Pemanfaatan Teknologi Informasi pada
+                                                            <p class="content-strong">Pemanfaatan Teknologi Informasi
+                                                                pada
                                                                 sektor pemerintahan sebagai solusi dari permasalahan
                                                                 pelayanan pemerintahan dalam pelayanan parkir kendaraan.
 
@@ -474,16 +439,6 @@
         </div>
         <!-- back to top area end -->
 
-    </div>
-
-
-    <div class="td-search-popup" id="td-search-popup">
-        <form action="https://wp-themes.solverwp.com/itechie/" class="search-form">
-            <div class="form-group">
-                <input type="text" name="s" class="form-control" placeholder="Search....." value="">
-            </div>
-            <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
-        </form>
     </div>
     <div class="body-overlay" id="body-overlay"></div>
 
