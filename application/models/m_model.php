@@ -102,11 +102,11 @@ class M_model extends CI_Model
     }
 
     // Mengecek apakah kendaraan sudah terparkir
-    public function cek_kendaraan_parkir($plat_nomor)
+    public function cek_kendaraan_parkir($id_pengguna_login)
     {
         $id_pengguna_login = $this->session->userdata('id');
     
-        $this->db->where('plat_nomor', $plat_nomor);
+        // $this->db->where('plat_nomor', $plat_nomor);
         $this->db->where('id_pengguna', $id_pengguna_login);
         $this->db->where('status', 'sedang parkir');
         $query = $this->db->get('tb_daftar_parkir');

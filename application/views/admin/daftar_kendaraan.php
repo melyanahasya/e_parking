@@ -343,14 +343,14 @@
                                         <th scope="col">Merk</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Jam Masuk</th>
-                                        <th scope="col">Aksi</th>
+                                        <!-- <th scope="col">Aksi</th> -->
                                     </tr>
                                 </thead>
                                 <tbody style="text-transform: capitalize;">
                                     <?php
                                     $no = 0;
                                     if (empty($daftar)) {
-                                        echo '<tr><td colspan="9">Data kosong</td></tr>';
+                                        echo '<tr><td colspan="8">Data kosong</td></tr>';
                                     } else {
                                         foreach ($daftar as $row) {
                                             $no++;
@@ -380,12 +380,12 @@
                                                 <td>
                                                     <?php echo $row->jam_masuk ?>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <button onclick="hapus(<?php echo $row->id ?>)" type="button"
                                                         class="btn-hapus">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
-                                                </td>
+                                                </td> -->
                                             </tr>
                                             <?php
                                         }

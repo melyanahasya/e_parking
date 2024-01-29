@@ -28,6 +28,7 @@
         background-color: #35A29F;
 
     }
+
     h1,
     h2,
     h3,
@@ -195,17 +196,47 @@
 
             </div>
         </div>
-        <!-- back to top area start -->
-        <div class="back-to-top">
-            <span class="back-top"><i class="fa fa-angle-up"></i></span>
-        </div>
-        <!-- back to top area end -->
 
-    </div><!-- #page -->
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
+<?php if ($this->session->flashdata('success_message')): ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        Swal.fire({
+            title: 'Sukses!',
+            text: '<?php echo $this->session->flashdata('success_message'); ?>',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "<?php echo base_url('pengguna/data_kendaraan'); ?>";
+            }
+        });
+    </script>
+<?php endif; ?>
+
+
+<?php if ($this->session->flashdata('berhasil_bayar')): ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        Swal.fire({
+            title: 'Sukses!',
+            text: '<?php echo $this->session->flashdata('berhasil_bayar'); ?>',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "<?php echo base_url('pengguna/data_kendaraan'); ?>";
+            }
+        });
+    </script>
+<?php endif; ?>
 
 
 </html>

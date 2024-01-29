@@ -174,7 +174,10 @@
                                 </div>
 
                                 <p>*Diharapkan memasukkan uang pas</p>
-                                <p>Tarif : Rp 2. 000, 00 / 12 jam</p>
+
+                                
+                                <p>Tarif Motor : Rp 2. 000, 00</p>
+                                <p>Tarif Mobil / Bus / Truk : Rp 4. 000, 00</p>
 
                             </div>
 
@@ -251,5 +254,21 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
+<?php if ($this->session->flashdata('error_pembayaran')): ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <script>
+        Swal.fire({
+            title: 'Gagal Melakukan Pembayaran!',
+            text: '<?php echo $this->session->flashdata('error_pembayaran'); ?>',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 2000,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "<?php echo base_url('pengguna/pembayaran'); ?>";
+            }
+        });
+    </script>
+<?php endif; ?>
 </html>
